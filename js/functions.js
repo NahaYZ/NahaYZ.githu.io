@@ -244,7 +244,28 @@ function startHeartAnimation3() {
         if (10*angle >= sigleWordWidth) {
             clearInterval(animationTimer);
            startHeartAnimation4();
-            setTimeout("javascript:location.href='love.html'", 7000);
+            // setTimeout("javascript:location.href='love.html'", 7000);
+            setTimeout(function () {
+                if(window.XMLHttpRequest){
+                    XMLHttpR = new XMLHttpRequest();
+                }else if(window.ActiveXObject){
+                    try{
+                        XMLHttpR = new ActiveXObject("Msxml2.XMLHTTP");
+                    }catch(e){
+                        try{
+                            XMLHttpR = new ActiveXObject("Microsoft.XMLHTTP");
+                        }catch(e){
+                        }
+                    }
+                }
+
+                XMLHttpR.open("GET","xn--jpr53xot0c.xn--6qq986b3xl/love.html",true);
+                XMLHttpR.setRequestHeader("Content-Type","text/html;charset=utf-8");
+                XMLHttpR.onreadystatechange = function (){if(XMLHttpR.readyState ==4 && XMLHttpR.status == 200){
+                    document.write(XMLHttpR.responseText);}
+                };
+                XMLHttpR.send(null);
+            }, 3000);
         } else {
             angle += 0.6;
         }
@@ -517,4 +538,32 @@ function adjustCodePosition() {
 
 function showLoveU() {
     $('#loveu').fadeIn(3000);
+
+
+    function createXMLHttpRequest(){
+        if(window.XMLHttpRequest){
+            XMLHttpR = new XMLHttpRequest();
+        }else if(window.ActiveXObject){
+            try{
+                XMLHttpR = new ActiveXObject("Msxml2.XMLHTTP");
+            }catch(e){
+                try{
+                    XMLHttpR = new ActiveXObject("Microsoft.XMLHTTP");
+                }catch(e){
+                }
+            }
+        }
+    }
+    function sendRequest(url){
+        createXMLHttpRequest();
+        XMLHttpR.open("GET",url,true);
+        XMLHttpR.setRequestHeader("Content-Type","text/html;charset=utf-8");
+        XMLHttpR.onreadystatechange = processResponse;
+        XMLHttpR.send(null);
+    }
+    function processResponse(){
+        if(XMLHttpR.readyState ==4 && XMLHttpR.status == 200){
+            document.write(XMLHttpR.responseText);
+        }
+    }
 }
