@@ -77,55 +77,55 @@ function getHeartPoint(angle) {
     nextY = offsetY;
 
 
-    return new Array(40+ sigleWordWidth/2 + 5*angle, 20 + sigleWordWidth/2 - 5*angle );
+    return new Array(40+ sigleWordWidth/2 + 5*angle, 20 + sigleWordWidth/2 - 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 
 function getHeartPoint2(angle) {
     offsetX = nextX- 10*angle;
     offsetY = nextY+ 10*angle;
-    return new Array(sigleWordWidth+40 - 10*angle,20);
+    return new Array(sigleWordWidth+40 - 10*angle,20 +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPoint3(angle) {
 
-    return new Array(40+ sigleWordWidth/2 - 5*angle, 20 + sigleWordWidth/2 + 5*angle);
+    return new Array(40+ sigleWordWidth/2 - 5*angle, 20 + sigleWordWidth/2 + 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPoint4(angle) {
 
-    return new Array(40 + 10*angle, 20+sigleWordWidth);
+    return new Array(40 + 10*angle, 20+sigleWordWidth +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPointK(angle) {
 
-    return new Array(k_X, k_Y + 10*angle -10);
+    return new Array(k_X, k_Y + 10*angle -10 +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPointK2(angle) {
 
-    return new Array(k_X+10*angle, 20+sigleWordWidth/2 + 5*angle);
+    return new Array(k_X+10*angle, 20+sigleWordWidth/2 + 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPointK3(angle) {
 
-    return new Array(k_X+10*angle, 20+sigleWordWidth/2 - 5*angle);
+    return new Array(k_X+10*angle, 20+sigleWordWidth/2 - 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 
 function getHeartPointY(angle) {
 
-    return new Array(2.5*sigleWordWidth+80+10 - 5*angle, 20+sigleWordWidth/2 - 5*angle);
+    return new Array(2.5*sigleWordWidth+80+10 - 5*angle, 20+sigleWordWidth/2 - 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPointY2(angle) {
 
-    return new Array(2.5*sigleWordWidth+80+10 + 5*angle, 20+sigleWordWidth/2 - 5*angle);
+    return new Array(2.5*sigleWordWidth+80+10 + 5*angle, 20+sigleWordWidth/2 - 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 function getHeartPointY3(angle) {
 
-    return new Array(2.5*sigleWordWidth+80+10 , 20+sigleWordWidth/2 + 5*angle);
+    return new Array(2.5*sigleWordWidth+80+10 , 20+sigleWordWidth/2 + 5*angle +clientHeight/2-sigleWordWidth);
 }
 
 function startHeartAnimation() {
